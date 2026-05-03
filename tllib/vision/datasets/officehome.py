@@ -59,7 +59,7 @@ class OfficeHome(ImageList):
     def __init__(self, root: str, task: str, download: Optional[bool] = False, **kwargs):
         print(task)
         assert task in self.image_list
-        data_list_file = os.path.join(root, self.image_list['Ar'])
+        data_list_file = os.path.join(root, self.image_list[task])
 
         if download:
             list(map(lambda args: download_data(root, *args), self.download_list))
